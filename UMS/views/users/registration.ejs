@@ -1,0 +1,78 @@
+
+
+<% include ('../layouts/header.ejs') %>
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 50px auto;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+      text-align: center;
+      color: #333;
+  }
+  form {
+      text-align: center;
+  }
+  input[type="text"], input[type="email"], input[type="password"], input[type="file"] {
+      width: calc(100% - 40px);
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+  }
+  input[type="submit"] {
+      width: calc(100% - 40px);
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 5px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+  input[type="submit"]:hover {
+      background-color: #0056b3;
+  }
+  h3 {
+      text-align: center;
+      color: red;
+  }
+</style>
+
+<h1>User Registration Form</h1>
+
+<form action="" method="post" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Enter Name" required>
+    <br><br>
+    <input type="text" name="email" placeholder="Enter Email" required> 
+    <br><br>   
+    <input type="text" name="mno" placeholder="Enter Mobile" required> 
+    <br><br>   
+    <input type="file" name="image" required> 
+    <br><br> 
+    <input type="password" name="password" placeholder="Enter password" required>  
+    <br><br>
+    <input type="submit" value="Register">
+    <br><br>
+</form>
+
+<p style="color: green;"> </p>
+
+<% 
+
+ if(typeof message !== 'undefined') {
+   %>
+   <p style="color: green;"> <%= message %> </p>
+   <%
+ }
+
+%>
+
+<% include ('../layouts/footer.ejs') %>
